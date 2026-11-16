@@ -1,0 +1,328 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: #12bf63;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    color: #0d1b1e;
+    min-height: 100vh;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.4rem;
+}
+
+.logo span {
+    color: #fff;
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-weight: 700;
+}
+
+/* ---------- Kartu, judul, dan animasi ---------- */
+@keyframes muncul {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-content {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: muncul 0.5s ease backwards;
+}
+
+.sub-title {
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.auth-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin: 6px 0 20px;
+}
+
+/* ---------- Form dan tombol ---------- */
+.t-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.t-row label {
+    min-width: 140px;
+    font-weight: 700;
+}
+
+.tugas-card input[type="text"],
+.tugas-card input[type="password"] {
+    padding: 9px 12px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    min-width: 220px;
+    background: #fff;
+}
+
+.tugas-card input:focus {
+    outline: none;
+    box-shadow: 3px 3px 0 #12bf63;
+}
+
+.t-btn {
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    padding: 10px 26px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.t-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, .25);
+}
+
+/* Link yang tampil seperti tombol .t-btn */
+a.t-btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.t-btn-kecil {
+    padding: 7px 18px;
+    font-size: 0.85rem;
+}
+
+.pesan-error {
+    background: #ffe5e5;
+    color: #8a0000;
+    border: 2px solid #000;
+    border-radius: 12px;
+    box-shadow: 3px 3px 0 #000;
+    padding: 12px 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+/* ---------- Halaman Login ---------- */
+.auth-wrap {
+    max-width: 460px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.auth-card .t-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+}
+
+.auth-card .t-row label {
+    min-width: 0;
+}
+
+.auth-card input {
+    width: 100%;
+}
+
+.auth-card .t-btn {
+    width: 100%;
+    margin-top: 6px;
+}
+
+/* ---------- Halaman To Do List ---------- */
+.todo-wrap {
+    max-width: 760px;
+    margin: 30px auto 0;
+    padding: 0 20px;
+}
+
+/* Header identitas: Nama, NIM, Foto */
+.tugas-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 0 20px;
+    padding: 15px;
+    border: 2px solid #000;
+    border-radius: 16px;
+    box-shadow: 4px 4px 0 #000;
+    background: #fff;
+}
+
+.tugas-foto {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #000;
+}
+
+.tugas-header .nama {
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+
+.nim {
+    font-weight: 700;
+}
+
+.todo-form {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.tugas-card .todo-form input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+}
+
+.todo-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    background: #f8f9fa;
+    border: 2px solid #000;
+    border-radius: 16px;
+    box-shadow: 4px 4px 0 #000;
+    padding: 14px 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: muncul 0.4s ease backwards;
+}
+
+.todo-item:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 #000;
+}
+
+.todo-text {
+    flex: 1;
+    min-width: 140px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* Kegiatan yang sudah selesai: hijau muda dan teks dicoret */
+.todo-item.selesai {
+    background: #e6f7ee;
+}
+
+.todo-item.selesai .todo-text {
+    text-decoration: line-through;
+    color: #5b6b61;
+}
+
+.todo-aksi {
+    display: flex;
+    gap: 8px;
+}
+
+.todo-aksi form {
+    margin: 0;
+}
+
+.aksi-link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    color: #000;
+    background: #fff;
+    transition: background 0.2s, color 0.2s;
+}
+
+button.aksi-link {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.aksi-selesai:hover {
+    background: #12bf63;
+    color: #fff;
+}
+
+.aksi-hapus:hover {
+    background: #d62828;
+    color: #fff;
+}
+
+.todo-kosong {
+    text-align: center;
+    font-weight: 600;
+    color: #555;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    font-weight: 600;
+}
+
+/* ---------- Responsif (layar kecil) ---------- */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 5%;
+    }
+
+    .auth-card,
+    .todo-wrap .card-content {
+        padding: 25px;
+    }
+
+    .todo-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
